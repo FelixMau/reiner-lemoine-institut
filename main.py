@@ -38,7 +38,7 @@ drop_arr = []
 for i in df.index:
     try:
         float(df["Leistung in kW"][i])
-    except TypeError:
+    except ValueError:
         drop_arr.append(i)
 df = df.drop(drop_arr)
 

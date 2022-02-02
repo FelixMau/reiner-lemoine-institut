@@ -15,5 +15,7 @@ for i in os.listdir("Energiequellen"):
 
                        )
     fig.update_yaxes(title={"text": "Anzahl der Einträge"})
-    fig.to_image(format="jpg")
+    if not os.path.exists("images"):
+        os.mkdir("images")
+    fig.write_image("images/"+df["Energiequelle"][0]+".jpeg")
     fig.show()
